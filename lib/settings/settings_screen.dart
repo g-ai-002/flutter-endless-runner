@@ -30,7 +30,7 @@ class SettingsScreen extends StatelessWidget {
                   children: [
                     _gap,
                     const Text(
-                      'Settings',
+                      '设置',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Press Start 2P',
@@ -39,11 +39,11 @@ class SettingsScreen extends StatelessWidget {
                       ),
                     ),
                     _gap,
-                    const _NameChangeLine('Name'),
+                    const _NameChangeLine('玩家名'),
                     ValueListenableBuilder<bool>(
                       valueListenable: settings.soundsOn,
                       builder: (context, soundsOn, child) => _SettingsLine(
-                        'Sound FX',
+                        '音效',
                         Icon(soundsOn ? Icons.graphic_eq : Icons.volume_off),
                         onSelected: () => settings.toggleSoundsOn(),
                       ),
@@ -51,13 +51,13 @@ class SettingsScreen extends StatelessWidget {
                     ValueListenableBuilder<bool>(
                       valueListenable: settings.musicOn,
                       builder: (context, musicOn, child) => _SettingsLine(
-                        'Music',
+                        '音乐',
                         Icon(musicOn ? Icons.music_note : Icons.music_off),
                         onSelected: () => settings.toggleMusicOn(),
                       ),
                     ),
                     _SettingsLine(
-                      'Reset progress',
+                      '重置进度',
                       const Icon(Icons.delete),
                       onSelected: () {
                         context.read<PlayerProgress>().reset();
@@ -65,7 +65,7 @@ class SettingsScreen extends StatelessWidget {
                         final messenger = ScaffoldMessenger.of(context);
                         messenger.showSnackBar(
                           const SnackBar(
-                            content: Text('Player progress has been reset.'),
+                            content: Text('关卡进度已重置。'),
                           ),
                         );
                       },
@@ -79,7 +79,7 @@ class SettingsScreen extends StatelessWidget {
               onPressed: () {
                 GoRouter.of(context).pop();
               },
-              child: const Text('Back'),
+              child: const Text('返回'),
             ),
             _gap,
           ],

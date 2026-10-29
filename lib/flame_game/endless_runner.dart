@@ -55,7 +55,7 @@ class EndlessRunner extends FlameGame<EndlessWorld> with HasCollisionDetection {
       ),
     );
 
-    final scoreText = 'Embers: 0 / ${level.winScore}';
+    final scoreText = '余烬：0 / ${level.winScore}';
 
     // The component that is responsible for rendering the text that contains
     // the current score.

@@ -12,6 +12,7 @@ GitHub / Gitea 双流水线均与
 - ✨ 收集 Ember 得分，躲避飞行敌人与地面障碍，达到目标分数即通关
 - 🔓 关卡解锁与最高分进度持久化（shared_preferences）
 - 🕹️ 主菜单、关卡选择（含翻页操作说明）与设置页
+- 🌐 简体中文界面：接入 flutter_localizations，默认 locale `zh_CN`
 - ⚙️ 设置玩家名、音乐与音效开关（Web 端按浏览器策略默认静音起步）
 - 🎨 NES 复古像素风主题（nes_ui + Press Start 2P 字体）
 - 🌄 视差背景、跳跃 / 受击特效，合成音效与循环 BGM（flame_audio）
@@ -79,6 +80,7 @@ git push origin v0.1.0
 ## 技术栈
 
 - Flutter 3.47.8
+- flutter_localizations（简体中文，默认 `zh_CN`）
 - Flame 1.38.2（游戏循环、碰撞与特效）
 - flame_audio + audioplayers 6.8.1（音乐与音效）
 - go_router 17.3.0（页面路由）
@@ -114,7 +116,9 @@ lib
   minSdk 35、统一长期签名、Gradle 9.8.2 + AGP 9.4.1 + Kotlin 2.4.21
 - CI：GitHub / Gitea 两套工作流与 flutter-snake 完全同构（bash 优先、阿里云 Maven
   镜像、Windows 短路径构建、CMake CMP0091 兼容补丁、Pages 多版本站点）
-- 界面文案沿用模板英文，可后续按需接入中文与 flutter_localizations
+- 界面已接入 `flutter_localizations` 并全部汉化，默认 locale 为 `zh_CN`；Press Start 2P
+  缺少中文字形，中文按 `fontFamilyFallback` 回退到系统字体（Windows 优先
+  `Microsoft YaHei UI`）
 
 ## 素材与许可
 

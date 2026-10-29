@@ -19,7 +19,7 @@
 - [x] 双流水线构建与发布（GitHub Actions / Gitea Actions，push tag 自动发布
   Android + Windows + Web 交付件）
 - [x] GitHub Pages 多版本在线试玩（每个 tag 一个独立版本目录）
-- [ ] 简体中文界面与本地化（当前沿用模板英文文案）
+- [x] 简体中文界面：接入 flutter_localizations，默认 zh_CN，文案全部汉化
 - [ ] 落盘日志系统（按日写入用户目录，便于排障）
 - [ ] 更多关卡主题、敌人类型与背景音乐
 
@@ -45,6 +45,8 @@
   - [x] 复刻 GitHub Actions 与 Gitea Actions 工作流（含 Pages 多版本站点与
         阿里云 Maven 镜像、Windows 短路径构建、CMake CMP0091 补丁）
   - [x] 模板测试改用新包名，本地 `flutter analyze` / `flutter test` 通过
+  - [x] 接入 flutter_localizations，locale 固定 zh_CN，主菜单 / 关卡选择 / 玩法说明 /
+        设置 / 结算文案全部汉化，默认玩家名改为“玩家”
   - [x] README / plan / versions 文档
 
 ---
@@ -52,6 +54,7 @@
 ## 设计原则
 
 - **离线优先**：纯本地游戏，不联网；字体随包内置，不依赖运行时下载
+- **中文优先**：界面默认简体中文，新增文案同样使用中文
 - **克制设计**：NES 复古像素风，扁平化，少即是多
 - **包体克制**：依赖均为成熟稳定的纯 Dart / Flutter 插件，避免引入大型原生 SDK
 - **双流水线等价**：GitHub 与 Gitea 构建产物一致，Windows 步骤优先 bash
@@ -59,6 +62,7 @@
 ## 依赖与版本基线
 
 - Flutter: 3.47.8
+- flutter_localizations: Flutter SDK 内置（intl 0.20.3），默认 locale `zh_CN`
 - Dart: 3.13.7（对应 Flutter 3.47.8 内置 Dart SDK）
 - Android SDK: compileSdk=37.2 / targetSdk=37 / minSdk=35，NDK 30.0.16248370
 - flame: 1.38.2

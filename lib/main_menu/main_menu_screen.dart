@@ -35,7 +35,7 @@ class MainMenuScreen extends StatelessWidget {
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 500),
                   child: const Text(
-                    'A Flutter game template.',
+                    '一款 Flutter 无尽跑酷游戏',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Press Start 2P',
@@ -56,12 +56,12 @@ class MainMenuScreen extends StatelessWidget {
                 audioController.playSfx(SfxType.buttonTap);
                 GoRouter.of(context).go('/play');
               },
-              child: const Text('Play'),
+              child: const Text('开始游戏'),
             ),
             _gap,
             WobblyButton(
               onPressed: () => GoRouter.of(context).push('/settings'),
-              child: const Text('Settings'),
+              child: const Text('设置'),
             ),
             _gap,
             Padding(
@@ -77,7 +77,7 @@ class MainMenuScreen extends StatelessWidget {
               ),
             ),
             _gap,
-            const Text('Built with Flame'),
+            const Text('由 Flame 驱动'),
           ],
         ),
       ),

@@ -23,7 +23,7 @@ class LocalStorageSettingsPersistence extends SettingsPersistence {
   @override
   Future<String> getPlayerName() async {
     final prefs = await instanceFuture;
-    return prefs.getString('playerName') ?? 'Player';
+    return prefs.getString('playerName') ?? '玩家';
   }
 
   @override

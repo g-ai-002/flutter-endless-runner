@@ -16,28 +16,28 @@ void main() {
     // Build our game and trigger a frame.
     await tester.pumpWidget(const MyGame());
 
-    // Verify that the 'Play' button is shown.
-    expect(find.text('Play'), findsOneWidget);
+    // Verify that the '开始游戏' button is shown.
+    expect(find.text('开始游戏'), findsOneWidget);
 
-    // Verify that the 'Settings' button is shown.
-    expect(find.text('Settings'), findsOneWidget);
+    // Verify that the '设置' button is shown.
+    expect(find.text('设置'), findsOneWidget);
 
-    // Go to 'Settings'.
-    await tester.tap(find.text('Settings'));
+    // Go to '设置'.
+    await tester.tap(find.text('设置').first);
     await tester.pumpAndSettle();
-    expect(find.text('Music'), findsOneWidget);
+    expect(find.text('音乐'), findsOneWidget);
 
     // Go back to main menu.
-    await tester.tap(find.text('Back'));
+    await tester.tap(find.text('返回'));
     await tester.pumpAndSettle();
 
-    // Tap 'Play'.
-    await tester.tap(find.text('Play'));
+    // Tap '开始游戏'.
+    await tester.tap(find.text('开始游戏'));
     await tester.pumpAndSettle();
-    expect(find.text('Select level'), findsOneWidget);
+    expect(find.text('选择关卡'), findsOneWidget);
 
     // Tap level 1.
-    await tester.tap(find.text('Level #1'));
+    await tester.tap(find.text('第 1 关'));
     await tester.pump();
   });
 

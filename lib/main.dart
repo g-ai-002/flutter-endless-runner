@@ -1,5 +1,6 @@
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nes_ui/nes_ui.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,15 @@ import 'player_progress/player_progress.dart';
 import 'router.dart';
 import 'settings/settings.dart';
 import 'style/palette.dart';
+
+/// Press Start 2P 不含中文字形，缺失时按此顺序回退到系统中文字体。
+const _cjkFontFallback = <String>[
+  'Microsoft YaHei UI',
+  'Noto Sans CJK SC',
+  'Noto Sans SC',
+  'PingFang SC',
+  'sans-serif',
+];
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,17 +60,25 @@ class MyGame extends StatelessWidget {
             final palette = context.watch<Palette>();
 
             return MaterialApp.router(
-              title: 'Endless Runner',
+              title: '无尽跑酷',
               theme: flutterNesTheme().copyWith(
                 colorScheme: ColorScheme.fromSeed(
                   seedColor: palette.seed.color,
                   surface: palette.backgroundMain.color,
                 ),
                 textTheme: GoogleFonts.pressStart2pTextTheme().apply(
+                  fontFamilyFallback: _cjkFontFallback,
                   bodyColor: palette.text.color,
                   displayColor: palette.text.color,
                 ),
               ),
+              localizationsDelegates: const [
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: const [Locale('zh', 'CN')],
+              locale: const Locale('zh', 'CN'),
               routerConfig: router,
             );
           },

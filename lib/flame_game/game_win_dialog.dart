@@ -36,13 +36,13 @@ class GameWinDialog extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Well done!',
+              '通关啦！',
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             Text(
-              'You completed level ${level.number} in $levelCompletedIn seconds.',
+              '第 ${level.number} 关用时 $levelCompletedIn 秒。',
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
@@ -52,7 +52,7 @@ class GameWinDialog extends StatelessWidget {
                   context.go('/play/session/${level.number + 1}');
                 },
                 type: NesButtonType.primary,
-                child: const Text('Next level'),
+                child: const Text('下一关'),
               ),
               const SizedBox(height: 16),
             ],
@@ -61,7 +61,7 @@ class GameWinDialog extends StatelessWidget {
                 context.go('/play');
               },
               type: NesButtonType.normal,
-              child: const Text('Level selection'),
+              child: const Text('选择关卡'),
             ),
           ],
         ),

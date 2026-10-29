@@ -33,7 +33,7 @@ class LevelSelectionScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Select level',
+                    '选择关卡',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                   const SizedBox(width: 16),
@@ -74,7 +74,10 @@ class LevelSelectionScreen extends StatelessWidget {
                       ),
                       title: Row(
                         children: [
-                          Text('Level #${level.number}', style: levelTextStyle),
+                          Text(
+                            '第 ${level.number} 关',
+                            style: levelTextStyle,
+                          ),
                           if (playerProgress.levels.length <
                               level.number - 1) ...[
                             const SizedBox(width: 10),
@@ -83,7 +86,7 @@ class LevelSelectionScreen extends StatelessWidget {
                               level.number) ...[
                             const SizedBox(width: 50),
                             Text(
-                              '${playerProgress.levels[level.number - 1]}s',
+                              '${playerProgress.levels[level.number - 1]} 秒',
                               style: levelTextStyle,
                             ),
                           ],
@@ -99,7 +102,7 @@ class LevelSelectionScreen extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).go('/');
             },
-            child: const Text('Back'),
+            child: const Text('返回'),
           ),
           const SizedBox(height: 30),
         ],

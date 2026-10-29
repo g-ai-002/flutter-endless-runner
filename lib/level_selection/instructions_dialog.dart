@@ -20,7 +20,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
     return Column(
       children: [
         Text(
-          'Instructions',
+          '玩法说明',
           style: TextStyle(
             fontFamily: GoogleFonts.pressStart2p().fontFamily,
             fontSize: 25,
@@ -76,7 +76,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 7,
                         child: Text(
-                          'Tap/click on the screen to jump in that direction, tap again to double jump.',
+                          '点击或轻扫屏幕朝对应方向起跳，再点一次可以二段跳。',
                         ),
                       ),
                     ],
@@ -87,7 +87,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 7,
                         child: Text(
-                          'You have to save as many Embers as possible to clear the level.',
+                          '尽可能多地收集余烬才能通关。',
                         ),
                       ),
                       const SizedBox(width: 20),
@@ -125,7 +125,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 6,
                         child: Text(
-                          'Watch out for these, they will make you drop your Embers.',
+                          '小心这些障碍，撞到会掉落余烬。',
                         ),
                       ),
                     ],

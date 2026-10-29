@@ -33,7 +33,7 @@ class _CustomNameDialogState extends State<CustomNameDialog> {
       child: SimpleDialog(
         title: Center(
           child: Text(
-            'Change name',
+            '修改玩家名',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
@@ -57,7 +57,7 @@ class _CustomNameDialogState extends State<CustomNameDialog> {
           ),
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Close', style: Theme.of(context).textTheme.bodyMedium),
+            child: Text('关闭', style: Theme.of(context).textTheme.bodyMedium),
           ),
         ],
       ),
