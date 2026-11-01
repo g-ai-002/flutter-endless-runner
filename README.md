@@ -62,8 +62,9 @@ flutter run -d chrome
 ```
 
 发布 `v*` tag 后，GitHub Pages 会为每个版本保留独立目录（`v0.1.0/` …），非 tag 构建
-写入 `debug/`，根目录自动生成版本索引页与 `versions.json`。首次启用需在仓库
-Settings → Pages 把来源设为 `gh-pages` 分支根目录。
+写入 `debug/`，根目录自动生成版本索引页与 `versions.json`。站点只保留最近 3 个
+MINOR 版本（每个 MINOR 取最新一次发布），`gh-pages` 每次发布都压缩成一次提交。
+首次启用需在仓库 Settings → Pages 把来源设为 `gh-pages` 分支根目录。
 
 ### 发布
 
